@@ -10,3 +10,14 @@ async function Weather() {
   console.log(data.currentConditions.temp);
 }
 Weather();
+
+//Fecthing Data from Giphy API
+
+async function giphy() {
+  const response = await fetch(
+    `https://api.giphy.com/v1/gifs/translate?api_key=CHeuvC0jF2z4XQReQXW7b7zPtTmJIOeh&s=cats`,
+  );
+  const data = await response.json();
+  console.log(data);
+}
+giphy();
