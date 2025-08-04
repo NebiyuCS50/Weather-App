@@ -19,6 +19,7 @@ const date = document.querySelector(".date");
 // Function to display weather data
 export function displayWeather(data) {
   try {
+    //main
     if (data.currentConditions.icon == "rain") {
       img.src = rainIcon;
     } else if (data.currentConditions.icon == "cloudy") {
@@ -39,6 +40,7 @@ export function displayWeather(data) {
     windSpeed.textContent = `Wind Speed: ${data.currentConditions.windspeed} mph`;
     feelsLike.textContent = `Feels Like: ${data.currentConditions.feelslike}`;
     visibility.textContent = `Visibility: ${data.currentConditions.visibility} miles`;
+    date.textContent = `Date: ${data.days[0].datetime}`;
   } catch (error) {
     console.error("Error displaying weather data:", error);
     alert("Error displaying weather data. Please try again.");
