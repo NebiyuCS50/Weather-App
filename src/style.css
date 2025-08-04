@@ -1,22 +1,25 @@
+.appname {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.appname > img {
+  width: 50px;
+  height: 50px;
+}
 .container {
   width: 100%;
   height: 100vh;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
   border: red solid 1px;
   position: relative;
-}
-
-.main,
-.dist {
-  /* Center content styles here */
 }
 
 /* From Uiverse.io by Shaidend */
 .InputContainer {
   position: absolute;
-  top: 30px; /* adjust as needed */
+  top: 45px; /* adjust as needed */
   right: 30px; /* adjust as needed */
   height: 40px;
   display: flex;
