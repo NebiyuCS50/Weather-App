@@ -1,22 +1,8 @@
 import "./style.css";
-
-//search bar
-const searchBar = document.querySelector(".input");
-searchBar.addEventListener("keyup", (e) => {
-  if (e.key === "Enter") {
-    const searchValue = searchBar.value;
-    console.log(searchValue);
-    if (searchValue) {
-      Weather(searchValue);
-      searchBar.value = ""; // Clear the input after search
-    } else {
-      Weather("Addis Ababa, Ethiopia");
-    }
-  }
-});
+import searchBar from "./search";
 
 //Fetching Data from Weather API
-async function Weather(params) {
+export async function Weather(params) {
   const response = await fetch(
     `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${encodeURIComponent(params)}?key=6XVV6HUW6G6K9CK3RDG5H57B7`,
   );
@@ -40,3 +26,6 @@ async function giphy() {
   container.appendChild(img);
 }
 giphy();
+
+//search bar functionality
+searchBar();
