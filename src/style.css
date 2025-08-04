@@ -23,10 +23,10 @@ body {
 }
 .container {
   width: 100%;
-  height: 100vh;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  /* border: red solid 1px; */
+
   position: relative;
   align-items: center;
 }
@@ -121,11 +121,11 @@ body {
 }
 .dist {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  grid-template-columns: repeat(4, 31%);
+  gap: 30px;
   width: 100%;
-  padding: 20px;
   box-sizing: border-box;
+  margin-top: -20px;
 }
 .img {
   position: relative;
@@ -141,4 +141,59 @@ body {
   width: 80px;
   height: 80px;
   object-fit: cover;
+}
+
+.one {
+  width: 100%;
+  margin: 50px 0px 0 10px;
+  gap: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid rgb(255, 255, 255, 0.8);
+  border-radius: 10px;
+  margin-top: 50px;
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+.two {
+  width: 100%;
+  margin: 50px 0px 0 10px;
+  gap: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid rgb(255, 255, 255, 0.8);
+  border-radius: 10px;
+  margin-top: 50px;
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+.three {
+  width: 100%;
+  margin: 50px 0px 0 10px;
+  gap: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid rgb(255, 255, 255, 0.8);
+  border-radius: 10px;
+  margin-top: 50px;
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+.img-dist > img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+}
+.img-dist {
+  position: relative;
+  top: -120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
