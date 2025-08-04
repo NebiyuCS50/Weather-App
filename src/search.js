@@ -1,6 +1,7 @@
 import { Weather } from "./index.js";
 import { giphy } from "./index.js";
-//search bar
+import { displayWeather } from "./display.js";
+
 function searchBar() {
   const searchBar = document.querySelector(".input");
   searchBar.addEventListener("keyup", async (e) => {
@@ -13,6 +14,7 @@ function searchBar() {
       } else {
         weatherData = await Weather("Addis Ababa, Ethiopia");
       }
+      displayWeather(weatherData); // <-- display weather info
 
       if (weatherData.currentConditions.conditions == "Rain") {
         giphy("rain");
@@ -25,6 +27,7 @@ function searchBar() {
       } else {
         giphy("weather");
       }
+      console.log(weatherData);
     }
   });
 }
