@@ -4,11 +4,15 @@ import { displayWeather } from "./display.js";
 
 //Fetching Data from Weather API
 export async function Weather(params) {
-  const response = await fetch(
-    `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${encodeURIComponent(params)}?key=6XVV6HUW6G6K9CK3RDG5H57B7`,
-  );
-  const data = await response.json();
-  return data;
+  try {
+    const response = await fetch(
+      `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${encodeURIComponent(params)}?key=6XVV6HUW6G6K9CK3RDG5H57B7`,
+    );
+    const data = await response.json();
+    return data;
+  } catch {
+    alert("Error fetching weather data:");
+  }
 }
 
 //Fecthing Data from Giphy API

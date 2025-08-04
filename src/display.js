@@ -5,7 +5,6 @@ import cloudyIcon from "./assets/cloudy.png";
 import sunnyIcon from "./assets/sun.png";
 import snowIcon from "./assets/cloudy.png";
 
-const main = document.querySelector(".main");
 const imageContainer = document.querySelector(".img");
 const img = document.createElement("img");
 const cityName = document.querySelector(".city");
@@ -19,18 +18,29 @@ const date = document.querySelector(".date");
 
 // Function to display weather data
 export function displayWeather(data) {
-  if (!data) return;
-  if (data.currentConditions.icon == "rain") {
-    img.src = rainIcon;
-  } else if (data.currentConditions.icon == "cloudy") {
-    img.src = cloudyIcon;
-  } else if (data.currentConditions.icon == "sunny") {
-    img.src = sunnyIcon;
-  } else if (data.currentConditions.icon == "snow") {
-    img.src = snowIcon;
-  } else {
-    img.src = cloudyIcon;
+  try {
+    if (data.currentConditions.icon == "rain") {
+      img.src = rainIcon;
+    } else if (data.currentConditions.icon == "cloudy") {
+      img.src = cloudyIcon;
+    } else if (data.currentConditions.icon == "sunny") {
+      img.src = sunnyIcon;
+    } else if (data.currentConditions.icon == "snow") {
+      img.src = snowIcon;
+    } else {
+      img.src = cloudyIcon;
+    }
+    img.alt = "Weather Icon";
+    imageContainer.appendChild(img);
+    cityName.textContent = `City Name: ${data.address}`;
+    condition.textContent = `Condition: ${data.currentConditions.conditions}`;
+    temperature.textContent = `Temperature: ${data.currentConditions.temp} °F`;
+    humidity.textContent = `Humidity: ${data.currentConditions.humidity} %`;
+    windSpeed.textContent = `Wind Speed: ${data.currentConditions.windspeed} mph`;
+    feelsLike.textContent = `Feels Like: ${data.currentConditions.feelslike}`;
+    visibility.textContent = `Visibility: ${data.currentConditions.visibility} miles`;
+  } catch (error) {
+    console.error("Error displaying weather data:", error);
+    alert("Error displaying weather data. Please try again.");
   }
-  img.alt = "Weather Icon";
-  imageContainer.appendChild(img);
 }
