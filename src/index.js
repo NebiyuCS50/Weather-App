@@ -1,5 +1,6 @@
 import "./style.css";
-import searchBar from "./search";
+import searchBar from "./search.js";
+import { displayWeather } from "./display.js";
 
 //Fetching Data from Weather API
 export async function Weather(params) {
@@ -28,3 +29,5 @@ export async function giphy(gifParam) {
 }
 //search bar functionality
 searchBar();
+//display current weather
+displayWeather();
